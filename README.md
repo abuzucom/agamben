@@ -3,7 +3,7 @@
 Reusable GitHub protections for repository files that can change automation,
 agent behavior, dependencies, deployment, or runtime behavior.
 
-This repository is intended for private repositories in the `abuzucom`
+This repository is intended for all repositories in the `abuzucom`
 organization. The default policy owner is `itsjustatank`.
 
 ## Security model
