@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   protected-file-review:
-    uses: abuzucom/protected-files-ci/.github/workflows/protected-file-review.yml@v1
+    uses: abuzucom/agamben/.github/workflows/protected-file-review.yml@v1
     with:
       owner: itsjustatank
       allow-owner-authored: true

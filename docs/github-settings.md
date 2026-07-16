@@ -3,7 +3,7 @@
 ## Organization settings
 
 In `abuzucom`, allow the consuming private repositories to access the private
-`protected-files-ci` repository's Actions workflows. Restrict access to the
+`agamben` repository's Actions workflows. Restrict access to the
 repositories that need the protection when organization settings permit that
 choice.
 
