@@ -1,4 +1,4 @@
-# protected-files-ci
+# agamben
 
 Reusable GitHub protections for repository files that can change automation,
 agent behavior, dependencies, deployment, or runtime behavior.
@@ -40,7 +40,7 @@ permissions:
 
 jobs:
   protected-file-review:
-    uses: abuzucom/protected-files-ci/.github/workflows/protected-file-review.yml@v1
+    uses: abuzucom/agamben/.github/workflows/protected-file-review.yml@v1
     with:
       owner: itsjustatank
       allow-owner-authored: true
@@ -49,6 +49,18 @@ jobs:
 Then enable the `Protected file review` check as a required status check on the
 protected branch. See [docs/installation.md](docs/installation.md) and
 [docs/github-settings.md](docs/github-settings.md).
+
+## Agent conventions
+
+`AGENTS.md` is the canonical instruction file. Tool-specific files are synced
+copies. Run `make sync` after changing `AGENTS.md`; run `make check` in CI.
+
+The instructions cover safe commands, tests, API compatibility, secrets,
+dependencies, execution paths, resource bounds, logging, path traversal,
+idempotency, performance, naming, and prose style.
+
+Use a separate bot or GitHub App identity for agent-authored pull requests.
+Protected-file changes from that identity require owner approval.
 
 ## Release policy
 
