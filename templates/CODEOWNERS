@@ -1,0 +1,15 @@
+# Adjust these paths for the consuming repository.
+AGENTS.md @itsjustatank
+**/AGENTS.md @itsjustatank
+CLAUDE.md @itsjustatank
+GEMINI.md @itsjustatank
+CONVENTIONS.md @itsjustatank
+**/.cursorrules @itsjustatank
+**/.clinerules @itsjustatank
+.github/** @itsjustatank
+scripts/** @itsjustatank
+tools/** @itsjustatank
+package.json @itsjustatank
+package-lock.json @itsjustatank
+Dockerfile @itsjustatank
+docker-compose.yml @itsjustatank

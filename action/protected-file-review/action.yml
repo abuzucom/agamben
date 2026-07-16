@@ -1,0 +1,27 @@
+name: Protected file review
+description: Check protected pull-request files for current owner approval.
+inputs:
+  owner:
+    description: GitHub login that owns protected-file review.
+    required: false
+    default: itsjustatank
+  policy-file:
+    description: Path to a JSON policy file in the trusted checkout.
+    required: false
+    default: checker/policy.json
+  allow-owner-authored:
+    description: Allow the configured owner to author protected-file PRs.
+    required: false
+    default: "true"
+runs:
+  using: composite
+  steps:
+    - name: Check protected files
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_EVENT_PATH: ${{ github.event_path }}
+        PROTECTED_FILES_OWNER: ${{ inputs.owner }}
+        PROTECTED_FILES_POLICY: ${{ inputs.policy-file }}
+        PROTECTED_FILES_ALLOW_OWNER_AUTHORED: ${{ inputs.allow-owner-authored }}
+      run: python3 "${{ github.action_path }}/../../checker/check_protected_files.py"

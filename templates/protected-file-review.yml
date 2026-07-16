@@ -1,0 +1,16 @@
+name: Protected file review
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  protected-file-review:
+    uses: abuzucom/protected-files-ci/.github/workflows/protected-file-review.yml@v1
+    with:
+      owner: itsjustatank
+      allow-owner-authored: true
